@@ -1,7 +1,9 @@
 DEUSPI
 ---
 
-MUSIC/RAP FR/SKATE RANDOM PLAYER
+RANDOM PLAYER
+
+MUSIC | RAP FR | SKATE |
 
 See [random-player-server](https://github.com/specialgee/random-player-server) for the back-end implementation.
 
