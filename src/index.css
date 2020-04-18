@@ -61,6 +61,11 @@ code {
   text-decoration: none !important;
 }
 
+#copyright-symbol {
+  font-family: 'Helvetica Neue', sans-serif;
+  margin-right: 5px;
+}
+
 .hide {
   display: none;
 }
