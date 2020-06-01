@@ -1,11 +1,11 @@
 DEUSPI
 ---
 
-RANDOM PLAYER
+YOUTUBE RANDOM PLAYER
 
 MUSIC | RAP FR | SKATE |
 
-See [random-player-server](https://github.com/specialgee/random-player-server) for the back-end implementation.
+See [donats-server](https://github.com/specialgee/donats-server) for the back-end implementation.
 
 ## Available Scripts
 
