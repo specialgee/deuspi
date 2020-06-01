@@ -1,3 +1,4 @@
+/* APP */
 .App {
   text-align: center;
   background-color: #ffcf00;
@@ -14,6 +15,7 @@
   max-width: 1000px;
 }
 
+/* LOGO */
 #logo-container {
   opacity: 1;
   z-index: 1;
@@ -55,6 +57,8 @@
 #deuspi-visual:hover {
   cursor: pointer;
 }
+
+/* VIDEO PLAYER */
 
 #video-player iframe {
   opacity: 0;
@@ -116,7 +120,7 @@
   position: fixed;
   left: 50%;
   transform: translate(-50%, 50%);
-  bottom: 17vh;
+  bottom: 15vh;
 }
 
 #video-button {
@@ -146,6 +150,13 @@
 
 #views {
   margin-right: 10px;
+}
+
+/* Extra small devices (phones, height 768px and down) */
+@media only screen and (max-height: 768px) {
+  #video-button-container {
+    bottom: 25vh !important;
+  }
 }
 
 /* Extra small devices (phones, 600px and down) */
