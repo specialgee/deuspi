@@ -1,10 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
-import { Role } from './helpers';
-import { authenticationService } from './services';
-import { LoginPage } from './pages';
-import { PrivateRoute } from './components/PrivateRoute';
-import Admin from './components/Admin';
 import VideoPlayer from './components/VideoPlayer';
 import Footer from './components/Footer';
 import './App.css';
@@ -57,24 +52,18 @@ class App extends React.Component {
 
   componentDidMount() {
     parseData(this.props.appData);
-
-    authenticationService.currentUser.subscribe(x => this.setState({
-      currentUser: x,
-      isAdmin: x && x.role === Role.Admin
-    }));
   }
 
-  logout() {
-      authenticationService.logout();
+  componentWillUnmount() {
+    
   }
 
   render() {
-    const { currentUser, isAdmin } = this.state;
 
     return (
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Switch>
-          <Route exact path="/">
+          <Route path="/">
             <div className="App">
               <div className="app-container w-50">
                 <div className="row">
@@ -85,30 +74,6 @@ class App extends React.Component {
                   </div>
                 </div>
               </div>    
-            </div>
-          </Route>
-          <PrivateRoute path="/admin" roles={[Role.Admin]} component={Admin} />
-          <Route path="/login">
-            <div>
-                {currentUser &&
-                    <nav className="navbar navbar-expand navbar-dark bg-dark">
-                        <div className="navbar-nav">
-                            <Link to="/login" className="nav-item nav-link">Login</Link>
-                            {isAdmin && <Link to="/admin" className="nav-item nav-link">Admin</Link>}
-                        </div>
-                    </nav>
-                }
-                <div className="jumbotron">
-                    <div className="container">
-                        <div className="row">
-                            <div className="login-container col-sm-4 offset-md-4">
-                                {/* <PrivateRoute exact path="/" component={HomePage} /> */}
-                                <PrivateRoute path="/admin" roles={[Role.Admin]} component={Admin} />
-                                <Route path="/login" component={LoginPage} />
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
           </Route>
         </Switch>
