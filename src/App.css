@@ -152,13 +152,6 @@
   margin-right: 10px;
 }
 
-/* Extra small devices (phones, height 768px and down) */
-@media only screen and (max-height: 768px) {
-  #video-button-container {
-    bottom: 25vh !important;
-  }
-}
-
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   #logo-container {
