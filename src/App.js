@@ -6,6 +6,8 @@ import './App.css';
 
 let data = [];
 
+let deuspiCategories = ["MUSIC", "RAP", "SKATE"];
+
 function parseData(appData) {
   JSON.parse(appData).forEach(element => {
     new Promise((resolve, reject) => {
@@ -25,9 +27,13 @@ function parseData(appData) {
 }
 
 function getCategories(_data, item) {
-  if (item.category !== Object.keys(_data)) {
-    _data[item.category.toLowerCase()] = [];
-  }
+  deuspiCategories.forEach(category => {
+    if (item.category === category) {
+      if (item.category !== Object.keys(_data)) {
+        _data[item.category.toLowerCase()] = [];
+      }  
+    }
+  })
 }
 
 function parseItemsByCategory(_data, item) {
